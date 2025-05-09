@@ -13,7 +13,8 @@ export async function clientLoader() {
       if(!user.$id) return redirect('/sign-in')
 
       const existingUser = await getExistingUser(user.$id)
-      if(existingUser?.status === 'user') return redirect('/')
+      // chage from '/' to '/dashboard'
+      if(existingUser?.status === 'user') return redirect('/dashboard')
 
       return existingUser?.$id ? existingUser : await storeUserData()
 

@@ -6,7 +6,12 @@ import { account } from '~/appwrite/client'
 export async function clientLoader() {
     try {
         const user = await account.get()
-        if(user.$id) return redirect('/')
+        console.log("User fetched:", user); // Debugging log
+        // chage from '/' to '/dashboard'
+        if(user.$id) {
+            console.log("Redirecting to /dashboard"); // Debugging log
+            return redirect('/dashboard')    
+        }   
 
     } catch (error) {
         console.log('Error fetching user',error)
@@ -34,6 +39,7 @@ const SignIn = () => {
                     iconCss='e-search-icon' 
                     className='button-class !h-11 !w-full'
                     onClick={loginWithGoogle}
+
                 >   
                     <img src="/assets/icons/google.svg" className='size-5' alt="google" />
                     <span className='p-18-semibold text-white'>Sign in with Google</span>

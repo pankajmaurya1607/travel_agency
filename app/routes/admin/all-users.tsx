@@ -78,8 +78,6 @@ const AllUsers = ({loaderData}: Route.ComponentProps) => {
 
          
       </GridComponent>
-
-      All Users Page Content
     </main>
   )
 }
