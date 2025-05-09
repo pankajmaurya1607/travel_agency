@@ -1,32 +1,62 @@
-# Welcome to React Router!
+# 🌍 Travel Agency
 
-A modern, production-ready template for building full-stack React applications using React Router.
+A modern, full-stack React application for planning and managing travel experiences.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+![Travel Agency Banner](https://images.unsplash.com/photo-1503220317375-aaad61436b1b?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200)
 
-## Features
+## ✨ Live Demo
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
+Visit our website: [Travel Agency](https://travel-agency-nu-seven.vercel.app/)
 
-## Getting Started
+## 🚀 Features
+
+- **Interactive Trip Planning** - Create and customize your travel itineraries
+- **User Authentication** - Secure login and registration system
+- **Responsive Design** - Beautiful UI that works on all devices
+- **Real-time Updates** - Stay informed about your travel plans
+- **AI-Powered Recommendations** - Get personalized travel suggestions using Gemini AI
+- **Rich Media Integration** - Beautiful imagery from Unsplash API
+- **Data Visualization** - Powered by Syncfusion components
+
+## 🛠️ Technology Stack
+
+- **Frontend**: React, React Router, TailwindCSS
+- **Backend**: Appwrite (BaaS)
+- **AI Integration**: Google Gemini API
+- **Image API**: Unsplash
+- **UI Components**: Syncfusion
+- **Deployment**: Vercel
+
+## 🏁 Getting Started
+
+### Prerequisites
+
+- Node.js (v14 or higher)
+- npm or yarn
 
 ### Installation
 
-Install the dependencies:
+1. Clone the repository:
+
+```bash
+git clone https://github.com/pankajmaurya1607/travel_agency.git
+```
+
+2. Navigate to the project directory:
+
+```bash
+cd travel_agency
+```
+
+3. Install dependencies:
 
 ```bash
 npm install
 ```
 
-### Development
+4. Create a `.env.local` file with your API keys (see example below)
 
-Start the development server with HMR:
+5. Start the development server:
 
 ```bash
 npm run dev
@@ -34,54 +64,40 @@ npm run dev
 
 Your application will be available at `http://localhost:5173`.
 
-## Building for Production
+## 🔑 Environment Variables
 
-Create a production build:
-
-```bash
-npm run build
-```
-
-## Deployment
-
-### Docker Deployment
-
-To build and run using Docker:
-
-```bash
-docker build -t my-app .
-
-# Run the container
-docker run -p 3000:3000 my-app
-```
-
-The containerized application can be deployed to any platform that supports Docker, including:
-
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
-
-### DIY Deployment
-
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
+Create a `.env.local` file in the root directory with the following variables:
 
 ```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
+# Syncfusion 
+VITE_SYNCFUSION_LICENSE_KEY=your_syncfusion_key
+
+# Appwrite
+VITE_APPWRITE_PROJECT_ID=your_project_id
+VITE_APPWRITE_API_KEY=your_api_key
+VITE_APPWRITE_DATABASE_ID=your_database_id
+VITE_APPWRITE_USERS_COLLECTION_ID=your_users_collection_id
+VITE_APPWRITE_TRIPS_COLLECTION_ID=your_trips_collection_id
+VITE_APPWRITE_API_ENDPOINT=https://fra.cloud.appwrite.io/v1
+
+# Gemini
+GEMINI_API_KEY=your_gemini_api_key
+
+# Unsplash
+UNSPLASH_ACCESS_KEY=your_unsplash_access_key
 ```
 
-## Styling
 
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
+## 🎨 Styling
+
+This project uses [Tailwind CSS](https://tailwindcss.com/) for styling, providing a clean and responsive user interface.
+
+
+## 👨‍💻 Author
+
+**Pankaj Maurya**
+- GitHub: [pankajmaurya1607](https://github.com/pankajmaurya1607)
 
 ---
 
-Built with ❤️ using React Router.
+Built with ❤️ using React, React Router, and Appwrite.
