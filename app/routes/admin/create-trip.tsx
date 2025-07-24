@@ -11,18 +11,39 @@ import { account } from '~/appwrite/client'
 import { useNavigate } from 'react-router'
 
 
-export const loader = async () => {
-    const response = await fetch('https://restcountries.com/v3.1/all')  
-    const data = await response.json()
-    // console.log(data)
+// export const loader = async () => {
+//     const response = await fetch('https://restcountries.com/v3.1/all')  
+//     const data = await response.json()
+//     // console.log(data)
 
-    return data.map((country: any) => ({
-        name: country.flag + country.name.common,
-        coordinates: country.latlng,
-        value: country.name.common,
-        openStreetMap: country.maps?.openStreetMaps  
-    }))
-}
+//     return data.map((country: any) => ({
+//         name: country.flag + country.name.common,
+//         coordinates: country.latlng,
+//         value: country.name.common,
+//         openStreetMap: country.maps?.openStreetMaps  
+//     }))
+// }
+
+
+
+export const loader = async () => {
+  const response = await fetch('https://countriesnow.space/api/v0.1/countries/positions');
+  const result = await response.json();
+
+  // Check if data exists
+  if (!result || !result.data) {
+    throw new Error("Failed to load countries data");
+  }
+
+  return result.data.map((country: any) => ({
+    name: country.name,
+    coordinates: [country.lat, country.long], // lat, long as per the new API
+    value: country.name,
+    openStreetMap: `https://www.openstreetmap.org/search?query=${encodeURIComponent(country.name)}`
+  }));
+};
+
+
 
 const CreateTrip = ({loaderData}: Route.ComponentProps) => {
     
